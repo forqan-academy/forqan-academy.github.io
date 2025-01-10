@@ -122,7 +122,7 @@
     </div>
 
     <div class="footer">
-        © 1446 - جميع الحقوق محفوظة (لطلاب الأكاديمية فقط).
+        © 2025 - موقع المواد والدروس. جميع الحقوق محفوظة.
     </div>
 
     <script>
@@ -158,6 +158,9 @@
             mediaContainer.style.display = "none";
             lessonTitle.style.display = "none";
             lessonButtonsDiv.style.display = "none";
+
+            document.getElementById('video').src = "";
+            document.getElementById('audio').src = "";
         };
 
         async function fetchLinks(type, subject) {
@@ -196,7 +199,7 @@
             const audioLinks = await fetchLinks("audio", subject);
 
             if (videoLinks[lesson - 1] && audioLinks[lesson - 1]) {
-                const embedLink = videoLinks[lesson - 1].replace("watch?v=", "embed/");
+                const embedLink = videoLinks[lesson - 1].replace("watch?v=", "embed/") + "?rel=0";
                 document.getElementById('video').src = embedLink;
                 document.getElementById('audio').src = audioLinks[lesson - 1];
                 mediaContainer.style.display = "block"; // إظهار الفيديو والصوت
