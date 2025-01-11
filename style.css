@@ -103,7 +103,7 @@ audio {
 }
 .voice-speed a {
     padding: 6px 30px;
-    margin: 0.5rem 0.4rem;
+    margin: 0.5rem 2px;
     color: #000;
     display: inline-block;
     text-align: center;
