@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Tajawal', sans-serif;
     direction: rtl;
@@ -8,11 +9,13 @@ body {
     background: #f7f9fc;
     color: #333;
 }
+
 h1 {
     margin: 20px;
     font-size: 2rem;
     color: #2c3e50;
 }
+
 #subject-header {
     background-color: #2c3e50;
     color: white;
@@ -20,9 +23,11 @@ h1 {
     cursor: pointer;
     display: none;
 }
+
 #lesson-title {
     display: none;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -31,6 +36,7 @@ h1 {
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .grid-item {
     display: flex; /* استخدام flexbox */
     justify-content: center; /* محاذاة النص أفقيًا */
@@ -45,16 +51,17 @@ h1 {
     transition: all 0.3s ease;
     height: 80px; /* تثبيت ارتفاع المربعات */
 }
+
 .grid-item:hover {
-    background-color: #2c3e50;
-    color: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 #lesson-buttons {
     margin-top: 20px;
     display: none;
 }
+
 #media-container {
     position: relative;
     margin-top: 20px;
@@ -63,6 +70,7 @@ h1 {
     max-width: 1000px;
     margin: auto;
 }
+
 iframe {
     position: absolute;
     top: 0;
@@ -73,17 +81,20 @@ iframe {
     height: 100%;
     border-radius: 10px;
 }
+
 .vid-cont {
     position: relative;
     width: 90%;
     padding-top: 56.25%;
     margin: auto;
 }
+
 audio {
     width: 90%; /* بنفس عرض الفيديو */
     margin-top: 10px;
     outline: none;
 }
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -94,16 +105,19 @@ audio {
     color: #fff;
     font-size: 0.9rem;
 }
+
 .voice-speed {
     display: flex;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 10px;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
 .voice-speed a {
     padding: 6px 30px;
-    margin: 0.5rem 2px;
+    margin: .5rem;
     color: #000;
     display: inline-block;
     text-align: center;
@@ -120,8 +134,104 @@ audio {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
 }
-a:hover {
+
+.test-cont {
+    padding: 0 20px;
+    display: none;
+}
+
+.test-cont .page-button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto 25px auto;
+    max-width: 710px;
+}
+
+.test-cont .media {
+    max-width: 880px;
+    width: 90%;
+    background-color: #ffb5b5;
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.test-cont .media:hover {
+    background-color: #ff9f9f!important;
+}
+
+.show-answers:not(.test-cont) {
+    background-color: #a29fff;
+    color: white;
+}
+
+.show-answers:not(.test-cont):hover {
+    background-color: #807ddd;
+}
+
+.page-button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.page-button:hover {
     background-color: #2c3e50;
     color: #fff;
-    font-size: 1.03rem;
+}
+
+.quest-cont:nth-child(1) {
+    margin-top: 0;
+}
+
+.quest-cont {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    border: 3px solid #e3e3e3;
+    margin: 10px auto 0 auto;
+    max-width: 710px;
+}
+
+.quest {
+    margin: 0;
+    text-align: right;
+    padding: 10px 5px 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.choices-cont {
+    margin-top: 7px;
+}
+
+.quest-cont .choice:nth-child(1) {
+    margin-top: 0;
+}
+
+.test-cont.show-answers .choice.correct {
+    background-color: #7eff7e;
+    border-color: #67e667;
+}
+
+.choice {
+    border: 3px solid #e3e3e3;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-top: 20px;
+    text-align: right;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.choice:hover {
+    background-color: #f0f0f0;
+}
+
+.choice:active {
+    background-color: #eaeaea;
 }
