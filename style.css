@@ -117,7 +117,7 @@ audio {
 
 .voice-speed a {
     padding: 6px 30px;
-    margin: .5rem;
+    margin: .5rem 1px;
     color: #000;
     display: inline-block;
     text-align: center;
@@ -135,12 +135,25 @@ audio {
     border: 1px solid #ddd;
 }
 
+.start-test {
+    background-color: #6ed86e!important;
+    width: calc(90% - 20px)!important;
+}
+
+.start-test:hover {
+    background-color: #62be62!important;
+}
+
 .test-cont {
     padding: 0 20px;
     display: none;
 }
 
-.test-cont .page-button {
+.test-cont.show {
+    display: block!important;
+}
+
+.test-cont .page-button, .start-test {
     padding: 6px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -149,7 +162,7 @@ audio {
     max-width: 710px;
 }
 
-.test-cont .media {
+.test-cont .media, .start-test {
     max-width: 880px;
     width: 90%;
     background-color: #ffb5b5;

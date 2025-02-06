@@ -5,6 +5,7 @@ const mediaContainer = document.getElementById("media-container");
 const lessonTitle = document.getElementById("lesson-title");
 const lessonButtonsDiv = document.getElementById("lesson-buttons");
 
+const startTest = document.querySelector(".start-test");
 const testCont = document.querySelector(".test-cont");
 let showAnswersButton = document.querySelector(".show-answers");
 
@@ -30,7 +31,7 @@ subjects.forEach(subject => {
 // الضغط على اسم المادة للرجوع
 subjectHeader.onclick = () => {
     // الإختبار مفتوح
-    if(testCont.style.display == "block" && lessonButtonsDiv.style.display == "none") {
+    if(testCont.classList.contains("show") && lessonButtonsDiv.style.display == "none") {
         // اختيار المادة
         chooseSubject.style.display = "none";
         subjectsContainer.style.display = "none";
@@ -54,7 +55,8 @@ subjectHeader.onclick = () => {
     mediaContainer.style.display = "none";
     
     // الإختبار
-    testCont.style.display = "none";
+    testCont.classList.remove("show");
+    startTest.innerText = "بدء الاختبار";
 
     document.getElementById("video").src = "";
     document.getElementById("audio").src = "";
@@ -154,7 +156,7 @@ async function showTest(subject, lesson = 1, hide_media = false) {
     document.querySelector(".media").href = mediaLinks[lesson - 1];
 
     make_test(subject, lesson);
-    testCont.style.display = "block"; // إظهار الإختبار
+    // testCont.style.display = "block"; // إظهار الإختبار
     lessonTitle.style.display = "none";
     if(hide_media) {// إخفاء المقطع والصوت
         lessonButtonsDiv.style.display = "none";
@@ -239,6 +241,15 @@ async function make_test(sub, lesson = 1) {
             eo.target.style.backgroundColor = "#ff7e7e";
             eo.target.style.borderColor = "#e66767";
         }
+    }
+}
+
+startTest.onclick = () => {
+    testCont.classList.toggle("show");
+    if(testCont.classList.contains("show")) {
+        startTest.innerText = "إنهاء الاختبار";
+    } else {
+        startTest.innerText = "بدء الاختبار";
     }
 }
 
